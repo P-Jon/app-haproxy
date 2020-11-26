@@ -1,0 +1,37 @@
+specification: '0.4'
+
+unikraft:
+  version: '0.4'
+  kconfig:
+    # Enable 9pfs filesystem support
+    - CONFIG_LIBUK9P=y
+    - CONFIG_LIB9PFS=y
+    - CONFIG_LIBDEVFS=y
+    - CONFIG_LIBDEVFS_AUTOMOUNT=y
+    - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
+    - CONFIG_LIBVFSCORE_ROOTFS_9PFS=y
+    - CONFIG_LIBUKLIBPARAM=y
+
+architectures:
+  x86_64: true
+
+platforms:
+  kvm: true
+
+libraries:
+  pthread-embedded: '0.4'
+  lwip: '0.4'
+  libslz: '0.4'
+  zlib: '0.4'
+  libuuid: '0.4'
+  newlib: '0.4'
+
+run:
+  volumes:
+    fs0:
+      driver: 9pfs
+      source: -*-*-*-*
+  networks:
+    net0:
+      pre_up: kraft-net --with-dnsmasq up
+      post_down: kraft-net --with-dnsmasq down
