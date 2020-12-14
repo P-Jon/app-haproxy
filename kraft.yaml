@@ -24,6 +24,7 @@ libraries:
   libslz: staging
   libuuid: '0.4'
   newlib: '0.4'
+  haproxy: staging
 
 run:
   volumes:
