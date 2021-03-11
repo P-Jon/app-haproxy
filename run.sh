@@ -1,0 +1,1 @@
+qemu-guest -k ./build/haproxy_kvm-x86_64 -m 2048 -b uk-haproxy -e $(pwd)/fs0 -a "-netdev.ipv4_addr=172.88.0.5 netdev.ipv4_subnet_mask=255.255.255.0 -f haproxy.cfg"
