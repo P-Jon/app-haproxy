@@ -1,0 +1,4 @@
+.PHONY: test
+test:
+	echo $(LIBHAPROXY_ORIGIN)
+	cat $(LIBHAPROXY_BASE)/main.c

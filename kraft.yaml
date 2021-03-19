@@ -21,6 +21,7 @@ platforms:
 libraries:
   pthread-embedded: '0.4'
   lwip: '0.4'
+  #openssl: '0.4'
   libslz: staging
   libuuid: '0.4'
   newlib: '0.4'
